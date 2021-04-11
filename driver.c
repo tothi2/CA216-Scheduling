@@ -26,7 +26,20 @@ int main(int argc, char *argv[])
     int priority;
     int burst;
 
+    if (argc != 2)
+    {
+        fprintf(stderr, "Error: Please insert a cfg file.\n");
+        return 1;
+    }
+
     in = fopen(argv[1],"r");
+    
+    if (in == NULL)
+    {
+        fprintf(stderr, "Cannot open requested file, please try again or make changes to the file.", argv[1]);
+        return 1;
+    }
+
     
     while (fgets(task,SIZE,in) != NULL) {
         temp = strdup(task);
