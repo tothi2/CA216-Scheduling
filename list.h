@@ -7,7 +7,7 @@
 typedef struct node {
     Task *task;
     struct node *next;
-} node_t;
+} nodetotal;
 
 
 // insert and delete operations.
