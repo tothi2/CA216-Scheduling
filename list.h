@@ -4,10 +4,11 @@
 
 #include "task.h"
 
-struct node {
+typedef struct node {
     Task *task;
     struct node *next;
-};
+} node_t;
+
 
 // insert and delete operations.
 void insert(struct node **head, Task *task);
