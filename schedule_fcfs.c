@@ -9,7 +9,7 @@
 nodetotal *tasks = NULL;
 int unique_id = 0;
 
-// add a task to the list
+// adding tasks to the list
 void add(char *name, int priority, int burst) {
     Task *new_task = malloc(sizeof(Task));
     new_task->burst = burst;
@@ -19,7 +19,7 @@ void add(char *name, int priority, int burst) {
     insert(&tasks, new_task);
 }
 
-// sort the tasks in the right order
+// making sure the tasks are done in the right order
 nodetotal *sort(nodetotal *head) {
     nodetotal *newlist = NULL;
     for (nodetotal *tmp = tasks; tmp; tmp = tmp->next) {
@@ -28,7 +28,6 @@ nodetotal *sort(nodetotal *head) {
     return newlist;
 }
 
-// invoke the scheduler
 void schedule() {
     nodetotal *reversed = sort(tasks);
     for (nodetotal *tmp = reversed; tmp; tmp = tmp->next) {
