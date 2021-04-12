@@ -19,7 +19,7 @@ void add(char *name, int priority, int burst) {
 }
 
 // making sure the tasks are done in the right order
-nodetotal *sort(node_t *head) {
+nodetotal *sort(nodetotal *head) {
     nodetotal *newlist = NULL;
     for (nodetotal *tmp = tasks; tmp; tmp = tmp->next) {
         insert(&newlist, tmp->task);
